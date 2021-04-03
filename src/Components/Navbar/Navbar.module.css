@@ -1,0 +1,28 @@
+.navigation {
+  display: flex;
+  background-color: var(--color-1);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 55px;
+  z-index: 2;
+}
+
+.logoIconWrapper {
+  margin-left: 0.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  margin-left: 1rem;
+  font-weight: 400;
+  font-size: 1.4rem;
+  display: grid;
+  place-items: center;
+}

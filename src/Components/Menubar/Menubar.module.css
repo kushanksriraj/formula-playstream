@@ -1,0 +1,29 @@
+@media screen and (max-width: 720px) {
+  .menubar {
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.1rem;
+    background-color: white;
+    z-index: 4;
+  }
+  
+  .menubar > button {
+    font-weight: bold;
+    display: grid;
+    place-items: center;
+    color: white;
+    background-color: var(--color-1);
+    font-size: 1rem;
+    border: none;
+  }
+
+  .menubar > button:focus {
+     outline: none;
+     /* border: none; */
+     border-bottom: 5px solid white;
+  }
+}

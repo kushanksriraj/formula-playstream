@@ -1,0 +1,16 @@
+.wrapper {
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.wrapper2 {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: white;
+  border: 1px solid red;
+  display: none;
+  width: 120px;
+  height: 120px;
+}

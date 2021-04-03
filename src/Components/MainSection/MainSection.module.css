@@ -1,0 +1,23 @@
+.mainSection {
+  height: 100%;
+}
+
+@media screen and (max-width: 720px) {
+  .mainSection {
+    padding-bottom: 50px;
+  }
+  .videoListWrapper {
+    display: grid;
+    place-items: center;
+  }
+}
+
+.title {
+font-size: 1.3rem;
+font-weight: 600;
+max-width: 400px;
+padding: 0.5rem;
+margin: auto;
+}
+.videoListWrapper {
+}
