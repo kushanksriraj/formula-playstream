@@ -6,7 +6,6 @@ export const LikeButton = ({ id }) => {
 
   const { isLiked, toggleLiked } = useUserData();
 
-  console.log(isLiked(id));
 
   return (
     <button className="btn-icon" onClick={() => toggleLiked(id)}>

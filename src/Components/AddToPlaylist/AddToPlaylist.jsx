@@ -34,7 +34,8 @@ export const AddToPlaylist = ({ id }) => {
       <div className={styles.wrapper2} ref={divRef}>
         {getTotalCustomPlaylists().map((list) => {
           return (
-            <label htmlFor={list.id}>
+            <label key={list.id} 
+            htmlFor={list.id}>
               <input
                 type="checkbox"
                 checked={isVideoInPlaylist(list.id, id)}

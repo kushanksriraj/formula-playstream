@@ -22,13 +22,13 @@ export const UserDataProvider = ({ children }) => {
         isCustom: false
       },
       {
-        id: 1101,
+        id: v4(),
         name: "Custom 1",
         videos: [],
         isCustom: true
       },
       {
-        id: 1102,
+        id: v4(),
         name: "Custom 2",
         videos: [],
         isCustom: true
