@@ -8,7 +8,7 @@ export const VideoThumbnail = ({ video }) => {
   return (
     <div
       className={styles.wrapper}
-      onClick={() => navigate(`video/${video.id}`)}
+      onClick={() => navigate(`/video/${video.id}`)}
     >
       <div className={styles.imgContainer}>
         <img

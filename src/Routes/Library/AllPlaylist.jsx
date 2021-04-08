@@ -1,46 +1,56 @@
 import styles from "./AllPlaylist.module.css";
-import { Playlist } from "./Playlist";
 import { useUserData } from "../../hooks";
 import { CreatePlaylist } from "../../Components";
+import { useNavigate } from "react-router-dom";
 
 export const AllPlaylist = ({ setRoute }) => {
-  const {
-    playlists,
-    isPlaylistSelected,
-    selectPlaylistOnClick
-  } = useUserData();
+  const { state } = useUserData();
+  const navigate = useNavigate();
 
   return (
-    <>
-      {isPlaylistSelected ? (
-        <Playlist />
-      ) : (
-        <div className={styles.wrapper}>
-          <div className={styles.title}>Library</div>
-          <div className={styles.defaultPlaylistWrapper}>
-            <div onClick={() => selectPlaylistOnClick("LIKED")}>Liked </div>
-            <div onClick={() => selectPlaylistOnClick("WATCH_LATER")}>
-              Watch later
-            </div>
-          </div>
-          <div className={styles.customPlaylistWrapper}>
-            <div className={styles.separator} />
-            <div className={styles.subtitle}>Your playlists</div>
-            <button onClick={() => setRoute("manage")}>Manage playlists</button>
-            {playlists
-              .filter(({ isCustom }) => isCustom)
-              .map((playlist) => (
-                <div
-                  key={playlist.id}
-                  onClick={() => selectPlaylistOnClick(playlist.id)}
-                >
-                  {playlist.name}
-                </div>
-              ))}
+    <div className={styles.wrapper}>
+      <div className={styles.title}>Your library</div>
+      <div className={styles.separator} />
+      <div className={styles.defaultPlaylistWrapper}>
+        <div
+          className={styles.playListName}
+          onClick={() => navigate("/play-list/LIKED")}
+        >
+          Liked
+        </div>
+        <div
+          className={styles.playListName}
+          onClick={() => navigate("/play-list/WATCH_LATER")}
+        >
+          Watch later
+        </div>
+      </div>
+      <div className={styles.customPlaylistWrapper}>
+        <div className={styles.subtitle}>
+          <div> Your playlists</div>
+          <button
+            className={styles.manageBtn}
+            onClick={() => setRoute("manage")}
+          >
+            Manage
+          </button>
+          <div className={styles.createBtn}>
             <CreatePlaylist />
           </div>
         </div>
-      )}
-    </>
+        <div className={styles.separator} />
+        {state
+          .filter((list) => list.id !== "LIKED" && list.id !== "WATCH_LATER")
+          .map((playlist) => (
+            <div
+              key={playlist.id}
+              className={styles.playListName}
+              onClick={() => navigate(`/play-list/${playlist.id}`)}
+            >
+              {playlist.name}
+            </div>
+          ))}
+      </div>
+    </div>
   );
 };

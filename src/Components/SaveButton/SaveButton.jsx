@@ -10,7 +10,7 @@ export const SaveButton = ({ id }) => {
       <div
         className="icon"
         style={{
-          fill: isSaved(id) ? "var(--color-1)" : "var(--color-8)"
+          fill: isSaved(id) ? "var(--color-3)" : "var(--color-2)"
         }}
       >
         <svg

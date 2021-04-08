@@ -1,6 +1,7 @@
 import styles from "./AddToPlaylist.module.css";
 import { useRef } from "react";
 import { useUserData } from "../../hooks";
+import { CreatePlaylist } from "../../Components";
 
 export const AddToPlaylist = ({ id }) => {
   const divRef = useRef(null);
@@ -10,6 +11,10 @@ export const AddToPlaylist = ({ id }) => {
     togglePlaylist
   } = useUserData();
 
+  const isChecked = getTotalCustomPlaylists().some((list) =>
+    isVideoInPlaylist(list.id, id)
+  );
+
   return (
     <div className={styles.wrapper}>
       <button
@@ -18,7 +23,10 @@ export const AddToPlaylist = ({ id }) => {
           divRef.current.style.display = "grid";
         }}
       >
-        <div className="icon" style={{ fill: "var(--color-8)" }}>
+        <div
+          className="icon"
+          style={{ fill: isChecked ? "var(--color-3)" : "var(--color-2)" }}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 32 40"
@@ -34,8 +42,7 @@ export const AddToPlaylist = ({ id }) => {
       <div className={styles.wrapper2} ref={divRef}>
         {getTotalCustomPlaylists().map((list) => {
           return (
-            <label key={list.id} 
-            htmlFor={list.id}>
+            <label key={list.id} htmlFor={list.id}>
               <input
                 type="checkbox"
                 checked={isVideoInPlaylist(list.id, id)}
@@ -46,6 +53,7 @@ export const AddToPlaylist = ({ id }) => {
             </label>
           );
         })}
+        <CreatePlaylist />
         <button onClick={() => (divRef.current.style.display = "none")}>
           Close
         </button>

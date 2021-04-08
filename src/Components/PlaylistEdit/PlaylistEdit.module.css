@@ -1,0 +1,29 @@
+.wrapper {
+  width: 90%;
+  margin: auto;
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 1rem;
+}
+
+.wrapper > input {
+  background-color: var(--color-1);
+  color: var(--color-2);
+  border: 1px solid var(--color-2);
+  padding: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.wrapper > input:disabled {
+   background-color: #ffffff25;
+   color: #bdbdbdde;
+}
+
+
+.wrapper > button {
+  /* margin: 1rem; */
+  background-color: var(--color-1);
+  border: 1px solid var(--color-2);
+  color: var(--color-2);
+  padding: 0.5rem;
+}

@@ -1,14 +1,14 @@
 import { useUserData } from "../../hooks";
 import { MainSection } from "../../Components";
+import { useParams, useNavigate } from "react-router-dom";
+import styles from "./Playlist.module.css";
 
 export const Playlist = () => {
-  const {
-    selectedPlaylistId,
-    getSelectedPlaylist,
-    unSelectPlaylistOnClick
-  } = useUserData();
+  const { getSelectedPlaylist } = useUserData();
+  const navigate = useNavigate();
+  const { playListId } = useParams();
 
-  const playlist = getSelectedPlaylist(selectedPlaylistId);
+  const playlist = getSelectedPlaylist(playListId);
 
   if (playlist.videos.length) {
     return (
@@ -22,10 +22,12 @@ export const Playlist = () => {
     );
   } else {
     return (
-      <h4>
-        <button onClick={unSelectPlaylistOnClick}>Back to library</button>
+      <div className={styles.wrapper} >
+        <button onClick={() => navigate(-1)}>Back to library</button>
+        <div className={styles.emptyPrompt} >
         Add some videos here.
-      </h4>
+        </div>
+      </div>
     );
   }
 };

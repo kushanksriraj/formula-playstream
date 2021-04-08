@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { useUserData } from "../../hooks";
+import styles from "./PlaylistEdit.module.css";
 
 export const PlaylistEdit = ({ playlist }) => {
   const [text, setText] = useState(playlist.name);
@@ -8,8 +9,7 @@ export const PlaylistEdit = ({ playlist }) => {
   const { editPlaylistOnClick, deletePlaylistOnClick } = useUserData();
 
   return (
-    <div>
-      :-
+    <div className={styles.wrapper}>
       <input
         type="text"
         ref={inputRef}
@@ -31,6 +31,7 @@ export const PlaylistEdit = ({ playlist }) => {
         <button
           onClick={() => {
             inputRef.current.disabled = false;
+            inputRef.current.focus();
             setBtnState((prev) => !prev);
           }}
         >

@@ -12,7 +12,7 @@ export const useUserData = () => {
   };
 
   const getSelectedPlaylist = (id) => {
-    return state.playlists.filter((playlist) => playlist.id === id)[0];
+    return state.find((playlist) => playlist.id === id);
   };
 
   const isLiked = (id) => {
@@ -42,7 +42,8 @@ export const useUserData = () => {
   };
 
   const isSaved = (id) => {
-    return state.find(({ id }) => id === "WATCH_LATER")
+    return state
+      .find(({ id }) => id === "WATCH_LATER")
       .videos.some((video) => video.id === id);
   };
 
@@ -95,19 +96,27 @@ export const useUserData = () => {
   };
 
   const getTotalCustomPlaylists = () => {
-    return state.playlists
-      .filter((list) => list.isCustom)
+    return state
+      .filter((list) => list.id !== "LIKED" && list.id !== "WATCH_LATER")
       .map(({ id, name }) => ({ id, name }));
   };
 
   const isVideoInPlaylist = (playlistId, id) => {
-    return state.playlists
-      .filter(({ id }) => id === playlistId)[0]
+    return state
+    .find((list) => list.id === playlistId)
       .videos.some((video) => video.id === id);
   };
 
   const togglePlaylist = (playlistId, id) => {
-    if (!isVideoInPlaylist(playlistId, id)) {
+    if (isVideoInPlaylist(playlistId, id)) {
+      dispatch({
+        type: "REMOVE_VIDEO_FROM_PLAYLIST",
+        payload: {
+          playlistId,
+          id
+        }
+      });
+    } else {
       const video = videoList.filter((video) => video.id === id)[0];
       dispatch({
         type: "ADD_VIDEO_TO_PLAYLIST",
@@ -116,19 +125,11 @@ export const useUserData = () => {
           video
         }
       });
-    } else {
-      dispatch({
-        type: "REMOVE_VIDEO_FROM_PLAYLIST",
-        payload: {
-          playlistId,
-          id
-        }
-      });
     }
   };
 
   return {
-    ...state,
+    state,
     getVideoById,
     isVideoInPlaylist,
     togglePlaylist,

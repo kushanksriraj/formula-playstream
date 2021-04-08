@@ -1,16 +1,17 @@
 import { useUserData } from "../../hooks";
 import { PlaylistEdit } from "../../Components";
+import styles from "./ManagePlaylist.module.css";
 
 export const ManagePlaylist = ({ setRoute }) => {
-  const { playlists } = useUserData();
+  const { state } = useUserData();
 
   return (
-    <div>
+    <div className={styles.wrapper} >
       <button onClick={() => setRoute("all")}>Back</button>
-      {playlists.filter(({ isCustom }) => isCustom).length > 0
-        ? playlists
-            .filter(({ isCustom }) => isCustom)
-            .map((list) => <PlaylistEdit key={list.id} playlist={list} />)
+      {state.filter(({ id }) => id !== "LIKED" && id !== "WATCH_LATER").length >
+      0
+        ? state.filter(({ id }) => id !== "LIKED" && id !== "WATCH_LATER").map((list) => 
+        <PlaylistEdit key={list.id} playlist={list} />)
         : "No playlists."}
     </div>
   );

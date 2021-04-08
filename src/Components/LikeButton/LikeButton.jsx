@@ -10,7 +10,7 @@ export const LikeButton = ({ id }) => {
   return (
     <button className="btn-icon" onClick={() => toggleLiked(id)}>
       <div className="icon" style={{ fill:
-           isLiked(id) ? "var(--color-1)" : "var(--color-8)"
+           isLiked(id) ? "var(--color-3)" : "var(--color-2)"
          }}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

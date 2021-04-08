@@ -7,7 +7,6 @@ export const VideoPage = () => {
   const { getVideoById } = useUserData();
   const { id } = useParams();
   const navigate = useNavigate();
-  console.log(id);
 
   const video = getVideoById(id);
 
@@ -43,7 +42,7 @@ export const VideoPage = () => {
       <div className={styles.actionBtnsWrapper}>
         <LikeButton id={video.id} /> 
         <SaveButton id={video.id} />
-        {/*<AddToPlaylist id={video.id} /> */}
+        <AddToPlaylist id={video.id} />
       </div>
       <div className={styles.videoDesc}>{video.desc}</div>
     </div>

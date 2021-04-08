@@ -9,40 +9,46 @@ export const CreatePlaylist = () => {
   const { creatNewPlaylist } = useUserData();
 
   return (
-    <div>
+    <div style={{ position: "relative" }} >
       <button
+        className={styles.newBtn}
         onClick={() => {
           divRef.current.style.display = "block";
           inputRef.current.focus();
         }}
       >
-        Create new playlist
+        New
       </button>
 
       <div ref={divRef} className={styles.wrapper} style={{ display: "none" }}>
         <input
           type="text"
+          placeholder="New playlist"
           ref={inputRef}
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
-        <button
-          onClick={() => {
-            divRef.current.style.display = "none";
-            setText("");
-          }}
-        >
-          X
-        </button>
-        <button
-          onClick={() => {
-            divRef.current.style.display = "none";
-            creatNewPlaylist(text);
-            setText("");
-          }}
-        >
-          Create
-        </button>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <button
+            onClick={() => {
+              divRef.current.style.display = "none";
+              setText("");
+            }}
+          >
+            x
+          </button>
+          <button
+            onClick={() => {
+              divRef.current.style.display = "none";
+              if (text !== "") {
+                creatNewPlaylist(text);
+                setText("");
+              }
+            }}
+          >
+            Create
+          </button>
+        </div>
       </div>
     </div>
   );
