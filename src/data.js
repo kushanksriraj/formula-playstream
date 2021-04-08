@@ -1,56 +1,62 @@
-import { v4 } from "uuid";
-
 export const videoList = [
   {
-    id: v4(),
+    id: "UyW8FdzH9dg",
     name: "Tom cruise test drives RedBull F1 car",
-    videoId: "UyW8FdzH9dg",
     desc:
       "Red Bull invited Tom Cruise to take a break from production of his new movie, Mission: Impossible Ghost Protocol, to pilot the Red Bull Racing F1 car through Southern California's 2.5-mile (4km) Willow Springs circuit."
   },
   {
-    id: v4(),
+    id: "epdmatdvSzk",
     name: "F1 2021 Rules: Everything You Need To Know",
-    videoId: "epdmatdvSzk"
+    desc:
+      "Red Bull invited Tom Cruise to take a break from production of his new movie, Mission: Impossible Ghost Protocol, to pilot the Red Bull Racing F1 car through Southern California's 2.5-mile (4km) Willow Springs circuit."
   },
   {
-    id: v4(),
+    id: "6OLVFa8YRfM",
     name: "The Insane Logistics of Formula 1",
-    videoId: "6OLVFa8YRfM"
+    desc:
+      "Red Bull invited Tom Cruise to take a break from production of his new movie, Mission: Impossible Ghost Protocol, to pilot the Red Bull Racing F1 car through Southern California's 2.5-mile (4km) Willow Springs circuit."
   },
   {
-    id: v4(),
+    id: "Lc0y7lgcvtk",
     name: "Why Mercedes' F1 Car is Unbeatable",
-    videoId: "Lc0y7lgcvtk"
+    desc:
+      "Red Bull invited Tom Cruise to take a break from production of his new movie, Mission: Impossible Ghost Protocol, to pilot the Red Bull Racing F1 car through Southern California's 2.5-mile (4km) Willow Springs circuit."
   },
   {
-    id: v4(),
+    id: "QuBlV0dixMo",
     name: "Race Highlights | 2021 Bahrain Grand Prix",
-    videoId: "QuBlV0dixMo"
+    desc:
+      "Red Bull invited Tom Cruise to take a break from production of his new movie, Mission: Impossible Ghost Protocol, to pilot the Red Bull Racing F1 car through Southern California's 2.5-mile (4km) Willow Springs circuit."
   },
   {
-    id: v4(),
+    id: "HF9VoGwENNg",
     name: "Top 10 Moments of Pre-Race Chaos",
-    videoId: "HF9VoGwENNg"
+    desc:
+      "Red Bull invited Tom Cruise to take a break from production of his new movie, Mission: Impossible Ghost Protocol, to pilot the Red Bull Racing F1 car through Southern California's 2.5-mile (4km) Willow Springs circuit."
   },
   {
-    id: v4(),
+    id: "rnIjQC08qKk",
     name: "Top 10 Cheeky F1 Innovations",
-    videoId: "rnIjQC08qKk"
+    desc:
+      "Red Bull invited Tom Cruise to take a break from production of his new movie, Mission: Impossible Ghost Protocol, to pilot the Red Bull Racing F1 car through Southern California's 2.5-mile (4km) Willow Springs circuit."
   },
   {
-    id: v4(),
+    id: "awcfwNrmm8A",
     name: "Why Don't F1 Cars Refuel?",
-    videoId: "awcfwNrmm8A"
+    desc:
+      "Red Bull invited Tom Cruise to take a break from production of his new movie, Mission: Impossible Ghost Protocol, to pilot the Red Bull Racing F1 car through Southern California's 2.5-mile (4km) Willow Springs circuit."
   },
   {
-    id: v4(),
+    id: "0lj6Q9gN4RQ",
     name: "2018 Monaco Grand Prix: Race Highlights",
-    videoId: "0lj6Q9gN4RQ"
+    desc:
+      "Red Bull invited Tom Cruise to take a break from production of his new movie, Mission: Impossible Ghost Protocol, to pilot the Red Bull Racing F1 car through Southern California's 2.5-mile (4km) Willow Springs circuit."
   },
   {
-    id: v4(),
+    id: "icRDb5mV2SA",
     name: "Fernando Alonso's Greatest Renault Moments",
-    videoId: "icRDb5mV2SA"
+    desc:
+      "Red Bull invited Tom Cruise to take a break from production of his new movie, Mission: Impossible Ghost Protocol, to pilot the Red Bull Racing F1 car through Southern California's 2.5-mile (4km) Willow Springs circuit."
   }
 ];

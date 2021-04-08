@@ -7,19 +7,8 @@ export const useUserData = () => {
 
   const { videoList } = useVideoData();
 
-  const unSelectPlaylistOnClick = () => {
-    dispatch({
-      type: "UNSELECT_PLAYLIST"
-    });
-  };
-
-  const selectPlaylistOnClick = (id) => {
-    dispatch({
-      type: "SELECT_PLAYLIST",
-      payload: {
-        id
-      }
-    });
+  const getVideoById = (id) => {
+    return videoList.find((video) => video.id === id);
   };
 
   const getSelectedPlaylist = (id) => {
@@ -27,14 +16,14 @@ export const useUserData = () => {
   };
 
   const isLiked = (id) => {
-    return state.playlists
-      .filter(({ id }) => id === "LIKED")[0]
+    return state
+      .find(({ id }) => id === "LIKED")
       .videos.some((video) => video.id === id);
   };
 
   const toggleLiked = (id) => {
     if (!isLiked(id)) {
-      const video = videoList.filter((video) => video.id === id)[0];
+      const video = videoList.find((video) => video.id === id);
 
       dispatch({
         type: "LIKE_VIDEO",
@@ -53,14 +42,13 @@ export const useUserData = () => {
   };
 
   const isSaved = (id) => {
-    return state.playlists
-      .filter(({ id }) => id === "WATCH_LATER")[0]
+    return state.find(({ id }) => id === "WATCH_LATER")
       .videos.some((video) => video.id === id);
   };
 
   const toggleSaved = (id) => {
     if (!isSaved(id)) {
-      const video = videoList.filter((video) => video.id === id)[0];
+      const video = videoList.find((video) => video.id === id);
 
       dispatch({
         type: "SAVE_VIDEO",
@@ -119,7 +107,6 @@ export const useUserData = () => {
   };
 
   const togglePlaylist = (playlistId, id) => {
-
     if (!isVideoInPlaylist(playlistId, id)) {
       const video = videoList.filter((video) => video.id === id)[0];
       dispatch({
@@ -142,6 +129,7 @@ export const useUserData = () => {
 
   return {
     ...state,
+    getVideoById,
     isVideoInPlaylist,
     togglePlaylist,
     getTotalCustomPlaylists,
@@ -152,8 +140,6 @@ export const useUserData = () => {
     toggleLiked,
     isSaved,
     toggleSaved,
-    selectPlaylistOnClick,
-    unSelectPlaylistOnClick,
     getSelectedPlaylist
   };
 };

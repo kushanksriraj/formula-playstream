@@ -17,60 +17,47 @@ export const userDataReducer = (state, action) => {
       };
 
     case "LIKE_VIDEO":
-      return {
-        ...state,
-        playlists: [
-          ...state.playlists.map((list) => {
-            if (list.id === "LIKED") {
-              return {
-                ...list,
-                videos: [action.payload.video, ...list.videos]
-              };
-            }
-            return list;
-          })
-        ]
-      };
+      return [
+        ...state.map((list) => {
+          if (list.id === "LIKED") {
+            return { 
+              ...list, 
+              videos: [action.payload.video, ...list.videos] };
+          }
+          return list;
+        })
+      ];
 
     case "UNLIKE_VIDEO":
-      return {
-        ...state,
-        playlists: [
-          ...state.playlists.map((list) => {
-            if (list.id === "LIKED") {
-              return {
-                ...list,
-                videos: list.videos.filter(
-                  (video) => video.id !== action.payload.id
-                )
-              };
-            }
-            return list;
-          })
-        ]
-      };
+      return [
+        ...state.map((list) => {
+          if (list.id === "LIKED") {
+            return {
+              ...list,
+              videos: list.videos.filter(
+                (video) => video.id !== action.payload.id
+              )
+            };
+          }
+          return list;
+        })
+      ];
 
     case "SAVE_VIDEO":
-      return {
-        ...state,
-        playlists: [
-          ...state.playlists.map((list) => {
+        return [
+          ...state.map((list) => {
             if (list.id === "WATCH_LATER") {
-              return {
-                ...list,
-                videos: [action.payload.video, ...list.videos]
-              };
+              return { 
+                ...list, 
+                videos: [action.payload.video, ...list.videos] };
             }
             return list;
           })
-        ]
-      };
+        ];
 
     case "UNSAVE_VIDEO":
-      return {
-        ...state,
-        playlists: [
-          ...state.playlists.map((list) => {
+        return [
+          ...state.map((list) => {
             if (list.id === "WATCH_LATER") {
               return {
                 ...list,
@@ -81,8 +68,7 @@ export const userDataReducer = (state, action) => {
             }
             return list;
           })
-        ]
-      };
+        ];
 
     case "EDIT_PLAYLIST":
       return {

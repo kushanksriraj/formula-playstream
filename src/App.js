@@ -1,16 +1,19 @@
 import "./styles.css";
-import { Navbar, Menubar, MainSection } from "./Components";
-import { Home, Library } from "./Routes";
-import { useControl } from "./hooks";
+import { Navbar, Menubar } from "./Components";
+import { Home, History, Library, VideoPage } from "./Routes";
+import { Routes, Route } from "react-router-dom";
 
 export default function App() {
-  const { route } = useControl();
   return (
     <div className="App">
       <Navbar />
       <Menubar />
-      {route === "home" && <Home />}
-      {route === "library" && <Library />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/library" element={<Library />} />
+        <Route path="/history" element={<History />} />
+        <Route path="/video/:id" element={<VideoPage />} />
+      </Routes>
     </div>
   );
 }
