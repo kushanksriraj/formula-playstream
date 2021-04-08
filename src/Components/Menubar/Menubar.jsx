@@ -1,15 +1,17 @@
 import styles from "./Menubar.module.css";
-import { useControl } from "../../hooks";
+import { useNavigate } from "react-router-dom";
 
 export const Menubar = () => {
-  const { changeRouteOnClick } = useControl();
-
+  const navigate = useNavigate();
   return (
     <section className={styles.menubar}>
-      <button onClick={() => changeRouteOnClick("home")}>
+      <button onClick={() => navigate("/")}>
         <div>Home</div>
       </button>
-      <button onClick={() => changeRouteOnClick("library")}>
+      <button onClick={() => navigate("/history")}>
+        <div>History</div>
+      </button>
+      <button onClick={() => navigate("/library")}>
         <div>Library</div>
       </button>
     </section>

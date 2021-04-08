@@ -1,14 +1,15 @@
 @media screen and (max-width: 720px) {
   .menubar {
     position: fixed;
-    bottom: 0;
-    height: 50px;
+    top: 55px;
+    height: 30px;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 0.1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1px;
     background-color: white;
-    z-index: 4;
+    z-index: 2;
+    transition: top 0.3s;
   }
   
   .menubar > button {
@@ -19,11 +20,11 @@
     background-color: var(--color-1);
     font-size: 1rem;
     border: none;
+    padding-bottom: 0.5rem;
   }
 
   .menubar > button:focus {
      outline: none;
-     /* border: none; */
-     border-bottom: 5px solid white;
+     border-bottom: 2px solid white;
   }
 }

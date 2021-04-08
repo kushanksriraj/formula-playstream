@@ -1,19 +1,18 @@
 import styles from "./VideoThumbnail.module.css";
-import { useControl } from "../../hooks";
+
+import { useNavigate } from "react-router-dom";
 
 export const VideoThumbnail = ({ video }) => {
-  const { selectVideoOnClick } = useControl();
-
-  console.log(video);
+  const navigate = useNavigate();
 
   return (
     <div
       className={styles.wrapper}
-      onClick={() => selectVideoOnClick(video.id)}
+      onClick={() => navigate(`video/${video.id}`)}
     >
       <div className={styles.imgContainer}>
         <img
-          src={`https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`}
+          src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
           alt=""
         />
       </div>
