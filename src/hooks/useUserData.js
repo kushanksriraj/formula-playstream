@@ -23,7 +23,7 @@ export const useUserData = () => {
 
   const toggleLiked = (id) => {
     if (!isLiked(id)) {
-      const video = videoList.find((video) => video.id === id);
+      const video = getVideoById(id);
 
       dispatch({
         type: "LIKE_VIDEO",
@@ -49,7 +49,7 @@ export const useUserData = () => {
 
   const toggleSaved = (id) => {
     if (!isSaved(id)) {
-      const video = videoList.find((video) => video.id === id);
+      const video = getVideoById(id);
 
       dispatch({
         type: "SAVE_VIDEO",
@@ -97,13 +97,18 @@ export const useUserData = () => {
 
   const getTotalCustomPlaylists = () => {
     return state
-      .filter((list) => list.id !== "LIKED" && list.id !== "WATCH_LATER")
+      .filter(
+        (list) =>
+          list.id !== "LIKED" &&
+          list.id !== "WATCH_LATER" &&
+          list.id !== "HISTORY"
+      )
       .map(({ id, name }) => ({ id, name }));
   };
 
   const isVideoInPlaylist = (playlistId, id) => {
     return state
-    .find((list) => list.id === playlistId)
+      .find((list) => list.id === playlistId)
       .videos.some((video) => video.id === id);
   };
 
@@ -117,7 +122,7 @@ export const useUserData = () => {
         }
       });
     } else {
-      const video = videoList.filter((video) => video.id === id)[0];
+      const video = getVideoById(id);
       dispatch({
         type: "ADD_VIDEO_TO_PLAYLIST",
         payload: {
@@ -128,8 +133,34 @@ export const useUserData = () => {
     }
   };
 
+  const addToHistoryOnClick = (id) => {
+    const video = getVideoById(id);
+
+    dispatch({
+      type: "ADD_TO_HISTORY",
+      payload: {
+        video
+      }
+    });
+  };
+
+  const isInHistory = (id) => {
+    return state
+      .find(({ id }) => id === "HISTORY")
+      .videos.some((video) => video.id === id);
+  };
+
+  const clearHistory = () => {
+    dispatch({
+      type: "CLEAR_HISTORY"
+    });
+  };
+
   return {
     state,
+    addToHistoryOnClick,
+    isInHistory,
+    clearHistory,
     getVideoById,
     isVideoInPlaylist,
     togglePlaylist,

@@ -1,5 +1,3 @@
-.mainSection {
-}
 
 .mainSection button {
   margin: 1rem;
@@ -11,7 +9,7 @@
 
 @media screen and (max-width: 720px) {
   .mainSection {
-    margin-top: 2rem;
+    margin-top: 3.5rem;
   }
   .videoListWrapper {
     display: grid;
@@ -31,7 +29,7 @@
 
 @media screen and (min-width: 721px) {
   .mainSection {
-    margin-top: 4rem;
+    margin-top: 3.5rem;
     margin-bottom: 1rem;
     padding: 2rem;
   }
@@ -43,7 +41,6 @@
   }
 
   .title {
-    padding-top: 2rem;
     margin: 0;
     font-size: 2rem;
     padding-left: 2rem;

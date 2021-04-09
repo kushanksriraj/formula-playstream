@@ -28,19 +28,26 @@ export const AllPlaylist = ({ setRoute }) => {
       <div className={styles.customPlaylistWrapper}>
         <div className={styles.subtitle}>
           <div> Your playlists</div>
-          <button
-            className={styles.manageBtn}
-            onClick={() => setRoute("manage")}
-          >
-            Manage
-          </button>
-          <div className={styles.createBtn}>
-            <CreatePlaylist />
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <button
+              className={styles.manageBtn}
+              onClick={() => setRoute("manage")}
+            >
+              Manage
+            </button>
+            <div className={styles.createBtn}>
+              <CreatePlaylist />
+            </div>
           </div>
         </div>
         <div className={styles.separator} />
         {state
-          .filter((list) => list.id !== "LIKED" && list.id !== "WATCH_LATER")
+          .filter(
+            (list) =>
+              list.id !== "LIKED" &&
+              list.id !== "WATCH_LATER" &&
+              list.id !== "HISTORY"
+          )
           .map((playlist) => (
             <div
               key={playlist.id}

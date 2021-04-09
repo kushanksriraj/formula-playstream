@@ -9,8 +9,9 @@
   position: fixed;
   top: 0;
   width: 100%;
-  height: 55px;
+  height: 70px;
   z-index: 8;
+  padding-bottom: 1rem;
 }
 
 .logoIconWrapper {
@@ -30,6 +31,7 @@
 @media screen and (min-width: 721px) {
   .navigation {
     height: 80px;
+    padding-bottom: 0;
   }
   .logoIconWrapper {
     margin-left: 2rem;

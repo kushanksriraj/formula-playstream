@@ -1,12 +1,27 @@
 import styles from "./History.module.css";
+import { useUserData } from "../../hooks";
+import { MainSection } from "../../Components";
+import { useNavigate } from "react-router-dom";
 
 export const History = () => {
-  return (
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-      praesentium? Inventore similique est recusandae, soluta, repellendus totam
-      voluptatum veritatis debitis veniam minima exercitationem in cupiditate
-      laudantium libero animi! Sunt, autem.
-    </div>
-  );
+  const { getSelectedPlaylist, clearHistory } = useUserData();
+  const navigate = useNavigate();
+
+  const videoList = getSelectedPlaylist("HISTORY").videos;
+
+  if (videoList.length) {
+    return (
+      <div className={styles.listWrapper}>
+        <button onClick={clearHistory}>Clear</button>
+        <MainSection route={"History"} videoList={videoList} />
+      </div>
+    );
+  } else {
+    return (
+      <div className={styles.wrapper}>
+        <button onClick={() => navigate(-1)}>Back</button>
+        <div className={styles.emptyPrompt}>Nothing here yet.</div>
+      </div>
+    );
+  }
 };
