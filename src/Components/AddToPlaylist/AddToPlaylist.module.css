@@ -29,3 +29,48 @@
   font-size: 0.9rem;
   margin: 0.8rem 0.4rem 0 0.4rem;
 }
+
+
+@media screen and (min-width: 721px) {
+ 
+  .wrapper {
+    display: grid;
+    place-items: center;
+    position: relative;
+  }
+  
+  .wrapper2 {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--color-2);
+    color: var(--color-1);
+    display: none;
+    padding: 0.5rem;
+    min-width: 180px;
+    border-radius: 5px;
+  }
+  
+  .wrapper2 input {
+    margin-right: 0.5rem;
+  }
+  
+  .wrapper2 label {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .wrapper2 > button {
+    background-color: var(--color-1);
+    border: none;
+    color: white;
+    border: 1px solid white;
+    padding: 0.3rem;
+    font-size: 0.9rem;
+    margin: 0.8rem 0.4rem 0 0.4rem;
+  }
+  
+
+
+}

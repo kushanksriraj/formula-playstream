@@ -9,3 +9,14 @@
   color: var(--color-2);
   padding: 0.5rem;
 }
+
+
+
+@media screen and (min-width: 721px) {
+
+  .wrapper {
+    width: 800px;
+    margin:5rem auto;
+  }
+  
+}

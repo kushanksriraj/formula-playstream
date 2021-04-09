@@ -3,7 +3,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* position: relative; */
 }
+
 body {
   background-color: var(--color-1);
   color: white;
@@ -13,7 +15,6 @@ body {
   display: grid;
   grid-template-rows: 55px auto;
   height: 100vh;
-  
 }
 
 .main-wrapper {
@@ -23,10 +24,18 @@ body {
 /* Desktop */
 @media screen and (min-width: 721px) {
   .main-wrapper {
-    display: grid;
-    grid-template-columns: 300px auto;
+   
   }
+  
+.App {
+  display: grid;
+  grid-template-rows: 100px auto;
+  height: 100vh;
 }
+}
+
+
+
 
 /* Mobile */
 @media screen and (max-width: 720px) {
