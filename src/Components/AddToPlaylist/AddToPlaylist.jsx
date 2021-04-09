@@ -16,8 +16,9 @@ export const AddToPlaylist = ({ id }) => {
   );
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} style={{ position: "relative" }}>
       <button
+        data-tooltip={"Playlist"}
         className="btn-icon"
         onClick={() => {
           divRef.current.style.display = "grid";

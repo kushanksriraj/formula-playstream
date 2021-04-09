@@ -1,6 +1,4 @@
 .wrapper {
-  display: grid;
-  place-items: center;
   position: relative;
 }
 
@@ -34,8 +32,6 @@
 @media screen and (min-width: 721px) {
  
   .wrapper {
-    display: grid;
-    place-items: center;
     position: relative;
   }
   

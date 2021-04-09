@@ -6,7 +6,10 @@ export const SaveButton = ({ id }) => {
   const { isSaved, toggleSaved } = useUserData();
 
   return (
-    <button className="btn-icon" onClick={() => toggleSaved(id)}>
+    <div style={{ position: "relative" }}>
+    <button 
+      data-tooltip={isSaved(id) ? "Remove" : "Save"}
+    className="btn-icon" onClick={() => toggleSaved(id)}>
       <div
         className="icon"
         style={{
@@ -23,5 +26,6 @@ export const SaveButton = ({ id }) => {
         </svg>
       </div>
     </button>
+    </div>
   );
 };
