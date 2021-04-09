@@ -59,8 +59,9 @@
 @media screen and (min-width: 721px) {
 
   .wrapper {
-    width: 800px;
-    margin:5rem auto;
+    max-width: 1000px;
+    margin-top: 5rem;
+    padding: 5rem;
   }
   
 }

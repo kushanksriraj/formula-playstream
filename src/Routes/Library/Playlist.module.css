@@ -24,3 +24,17 @@
   color: #ffffff9f;
 }
 
+
+
+@media screen and (min-width: 721px) {
+
+  .wrapper {
+    margin-top: 100px;
+    padding: 1rem;
+  }
+
+  .listWrapper {
+      max-width: 500px;
+  }
+  
+}

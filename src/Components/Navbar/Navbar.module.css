@@ -31,4 +31,7 @@
   .navigation {
     height: 80px;
   }
+  .logoIconWrapper {
+    margin-left: 2rem;
+  }
 }

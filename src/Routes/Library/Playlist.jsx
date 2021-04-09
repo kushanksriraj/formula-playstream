@@ -12,7 +12,7 @@ export const Playlist = () => {
 
   if (playlist.videos.length) {
     return (
-      <div>
+      <div className={styles.listWrapper}>
         <MainSection
           route={playlist.name}
           videoList={playlist.videos}
