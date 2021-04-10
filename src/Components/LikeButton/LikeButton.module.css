@@ -1,15 +1,17 @@
-[data-tooltip]:before {
-  position: absolute;
-  content: attr(data-tooltip);
-  display: none;
-  top: -1.2rem;
-  left: 1rem;
-  color: var(--color-1);
-  background-color: var(--color-2);
-  padding: 0 0.2rem;
-  font-weight: bold;
-}
+@media screen and (min-width: 721px) {
+  [data-tooltip]:before {
+    position: absolute;
+    content: attr(data-tooltip);
+    display: none;
+    top: -1.2rem;
+    left: 1rem;
+    color: var(--color-1);
+    background-color: var(--color-2);
+    padding: 0 0.2rem;
+    font-weight: bold;
+  }
 
-[data-tooltip]:hover:before {
-  display: block;
+  [data-tooltip]:hover:before {
+    display: block;
+  }
 }
