@@ -6,16 +6,25 @@ import {
   Library,
   VideoPage,
   Login,
+  Signup,
   PrivateRoute
 } from "./Routes";
 import { Routes, Route } from "react-router-dom";
 import { Playlist } from "./Routes/Library/Playlist";
+import { useState } from "react";
 
 export default function App() {
+  const [toggleSidebar, setToggleSidebar] = useState(false);
   return (
     <div className="App">
-      <Navbar />
-      <Menubar />
+      <Navbar
+        toggleSidebar={toggleSidebar}
+        setToggleSidebar={setToggleSidebar}
+      />
+      <Menubar
+        toggleSidebar={toggleSidebar}
+        setToggleSidebar={setToggleSidebar}
+      />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/video/:id" element={<VideoPage />} />
@@ -24,6 +33,7 @@ export default function App() {
         <PrivateRoute path="/history" element={<History />} />
         <PrivateRoute path="/play-list/:playListId" element={<Playlist />} />
 
+        <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
       </Routes>
     </div>

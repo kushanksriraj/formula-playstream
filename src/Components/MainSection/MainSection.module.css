@@ -9,7 +9,7 @@
 
 @media screen and (max-width: 720px) {
   .mainSection {
-    margin-top: 4rem;
+    margin-top: 2rem;
   }
   .videoListWrapper {
     display: grid;

@@ -28,6 +28,25 @@
   place-items: center;
 }
 
+.toggleIcon {
+  height: 35px;
+  width: 40px;
+  cursor: pointer;
+  margin: 0 0.3rem;
+  margin-left: 1rem;
+}
+
+.toggleIcon > svg {
+  fill: var(--color-2);
+}
+
+.nameToggleWrapper {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  /* border: 1px solid red; */
+}
+
 @media screen and (min-width: 721px) {
   .navigation {
     height: 80px;
@@ -35,5 +54,11 @@
   }
   .logoIconWrapper {
     margin-left: 2rem;
+  }
+  .toggleIcon {
+    display: none;
+  }
+  .nameToggleWrapper div{
+    margin: 0 1rem;
   }
 }

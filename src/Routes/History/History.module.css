@@ -1,9 +1,10 @@
 .wrapper {
-  margin-top: 70px;
+  margin-top: 2rem;
 }
 
 .wrapper button {
   margin: 1rem;
+  margin-left: 2rem;
   background-color: var(--color-1);
   border: 1px solid var(--color-2);
   color: var(--color-2);
@@ -23,10 +24,15 @@
   color: #ffffff9f;
 }
 
-.listWrapper button {
+.listWrapper {
   position: relative;
-  top: 4rem;
-  left: 80vw;
+  padding-top: 1rem;
+}
+
+.listWrapper button {
+  position: absolute;
+  top: 1rem;
+  right: 0.1em;
   margin: 1rem;
   background-color: var(--color-1);
   border: 1px solid var(--color-2);

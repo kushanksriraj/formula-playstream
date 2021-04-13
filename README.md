@@ -8,3 +8,4 @@ https://thenounproject.com/search/?q=like&i=3835916
 
 https://thenounproject.com/search/?q=save&i=3835610
 
+https://thenounproject.com/search/?q=sidebar&i=167204

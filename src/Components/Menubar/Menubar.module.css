@@ -2,15 +2,15 @@
   .menubar {
     position: fixed;
     top: 70px;
-    height: 30px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 1px;
-    background-color: white;
+    right: 0;
+    height: calc(100vh - 70px);
+    width: 0;
+    background-color: var(--color-1);
     z-index: 2;
+    box-shadow: -20px 0 100px black;
+    transition: width 0.5s ease;
   }
-  
+
   .menubar > button {
     font-weight: bold;
     display: grid;
@@ -19,15 +19,19 @@
     background-color: var(--color-1);
     font-size: 1rem;
     border: none;
-    padding-bottom: 0.5rem;
+    margin: 1.5rem;
+    padding: 0.5rem;
   }
 
   .menubar > button:focus {
-     outline: none;
-     border-bottom: 2px solid white;
+    outline: none;
+    outline: 2px solid white;
+  }
+
+  .menubarToggle {
+    width: 200px;
   }
 }
-
 
 @media screen and (min-width: 721px) {
   .menubar {
@@ -38,7 +42,7 @@
     height: 90%;
     border-right: 1px solid red;
   }
-  
+
   .menubar > button {
     font-weight: bold;
     display: grid;
@@ -52,8 +56,7 @@
   }
 
   .menubar > button:focus {
-     outline: none;
-     border-bottom: 2px solid white;
+    outline: none;
+    border-bottom: 2px solid white;
   }
-
 }
