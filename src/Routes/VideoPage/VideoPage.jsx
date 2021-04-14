@@ -40,9 +40,11 @@ export const VideoPage = () => {
         <div className={styles.name}>{video.name}</div>
       </div>
       <div className={styles.actionBtnsWrapper}>
+        <div className={styles.actionBtns}>
         <LikeButton id={video.id} /> 
         <SaveButton id={video.id} />
         <AddToPlaylist id={video.id} />
+        </div>
       </div>
       <div className={styles.videoDesc}>{video.desc}</div>
     </div>
