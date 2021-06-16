@@ -3,7 +3,8 @@ A video library App for Formula 1 fans 🏎
 
 Live link: https://playstream.netlify.app
   
-[Express server link](https://replit.com/@kushanksriraj/playstream#index.js)
+[Express server](https://replit.com/@kushanksriraj/playstream#index.js)
+
 ----
 
 
