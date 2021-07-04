@@ -1,4 +1,32 @@
+body {
+  background-color: var(--color-1);
+  color: white;
+}
+
 .App {
-  font-family: sans-serif;
-  text-align: center;
+  display: grid;
+  grid-template-rows: 55px auto;
+  height: 100vh;
+}
+
+.main-wrapper {
+}
+
+/* Desktop */
+@media screen and (min-width: 721px) {
+  .main-wrapper {
+  }
+
+  .App {
+    display: grid;
+    grid-template-rows: 100px auto;
+    grid-template-columns: 250px auto;
+    height: 100vh;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 720px) {
+  .main-wrapper {
+  }
 }

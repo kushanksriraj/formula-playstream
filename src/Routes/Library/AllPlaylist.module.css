@@ -1,0 +1,67 @@
+.wrapper {
+  margin-top: 2.5rem;
+  padding-left: 1.5rem;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.defaultPlaylistWrapper {
+  margin-bottom: 5rem;
+}
+
+.customPlaylistWrapper {
+}
+
+.separator {
+  border-bottom: 1px solid var(--color-3);
+  width: 90%;
+  margin: 0.6rem 0;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  position: relative;
+  top: 1rem;
+}
+
+.manageBtn {
+  position: relative;
+  background-color: var(--color-1);
+  border: none;
+  color: white;
+  border: 1px solid white;
+  padding: 0.2rem 0.5rem;
+  height: 2rem;
+  font-size: 0.9rem;
+  margin-right: 1rem;
+}
+
+.createBtn {
+  position: relative;
+  bottom: 1rem;
+}
+
+.playListName {
+  margin: 1.5rem 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+
+@media screen and (min-width: 721px) {
+
+  .wrapper {
+    max-width: 1000px;
+    padding: 5rem;
+    padding-top: 2.5rem;
+  }
+  
+}

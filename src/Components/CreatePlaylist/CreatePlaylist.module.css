@@ -1,0 +1,106 @@
+.wrapper {
+  position: absolute;
+  right: 0;
+  top: -1rem;
+  border: 1px solid var(--color-3);
+  width: 7rem;
+  height: 6rem;
+  padding: 0.2rem;
+  z-index: 4;
+  background-color: var(--color-1);
+}
+
+.wrapper button {
+  margin: 0 0.1rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: var(--color-1);
+  border: none;
+  color: white;
+  border: 1px solid white;
+  font-size: 0.9rem;
+}
+
+.wrapper input {
+  width: 100%;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  background-color: var(--color-1);
+  border: 1px solid var(--color-2);
+  color: var(--color-2);
+}
+
+.wrapper input::placeholder{
+  font-size: 0.9rem;
+  padding: 0.1rem;
+}
+
+.newBtn {
+  margin: 0 0.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  height: 2rem;
+  background-color: var(--color-1);
+  border: none;
+  color: white;
+  border: 1px solid white;
+  font-size: 0.9rem;
+}
+
+
+
+@media screen and (min-width: 721px) {
+
+  .wrapper {
+    position: absolute;
+    right: 0;
+    top: -1rem;
+    width: 9rem;
+    height: 6.5rem;
+    padding: 0.5rem;
+    z-index: 4;
+    /* border:none; */
+    background-color: var(--color-2);
+    border-radius: 5px;
+  }
+  
+  .wrapper button {
+    margin: 0 0.1rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: var(--color-1);
+    border: none;
+    color: white;
+    border: 1px solid white;
+    font-size: 0.9rem;
+    border-radius: 5px;
+  }
+  
+  .wrapper input {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    background-color: var(--color-1);
+    border: 1px solid var(--color-2);
+    color: var(--color-2);
+    border-radius: 5px;
+  }
+  
+  .wrapper input::placeholder{
+    font-size: 0.9rem;
+    padding: 0.1rem;
+  }
+  
+  .newBtn {
+    margin: 0 0.5rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    height: 2rem;
+    background-color: var(--color-1);
+    border: none;
+    color: white;
+    border: 1px solid white;
+    font-size: 0.9rem;
+  }
+    
+}

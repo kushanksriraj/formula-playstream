@@ -1,0 +1,28 @@
+.wrapper {
+  margin-top: 2rem;
+}
+
+.wrapper > button {
+  margin: 1rem;
+  background-color: var(--color-1);
+  border: 1px solid var(--color-2);
+  color: var(--color-2);
+  padding: 0.5rem;
+}
+
+
+
+@media screen and (min-width: 721px) {
+
+  .wrapper {
+    max-width: 1000px;
+    padding: 5rem;
+    padding-top: 2.5rem;
+  }
+
+  .wrapper > button {
+    margin-bottom: 2rem;
+  }
+  
+  
+}

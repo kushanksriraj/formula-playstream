@@ -1,0 +1,62 @@
+@media screen and (max-width: 720px) {
+  .menubar {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    height: calc(100vh - 70px);
+    width: 0;
+    background-color: var(--color-1);
+    z-index: 2;
+    box-shadow: -20px 0 100px black;
+    transition: width 0.5s ease;
+  }
+
+  .menubar > button {
+    font-weight: bold;
+    display: grid;
+    place-items: center;
+    color: white;
+    background-color: var(--color-1);
+    font-size: 1rem;
+    border: none;
+    margin: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  .menubar > button:focus {
+    outline: none;
+    outline: 2px solid white;
+  }
+
+  .menubarToggle {
+    width: 250px;
+  }
+}
+
+@media screen and (min-width: 721px) {
+  .menubar {
+    position: fixed;
+    top: 100px;
+    left: 1rem;
+    width: 250px;
+    height: 90%;
+    border-right: 1px solid red;
+  }
+
+  .menubar > button {
+    font-weight: bold;
+    display: grid;
+    place-items: center;
+    color: white;
+    background-color: var(--color-1);
+    font-size: 1rem;
+    border: none;
+    padding-bottom: 0.5rem;
+    margin: 2.5rem;
+  }
+
+  .menubar > button:focus {
+    outline: none;
+    border-bottom: 2px solid white;
+  }
+}
